@@ -8,6 +8,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":" node --watch app.js"
+    "dev": "node --watch app.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6"
   }
 }
