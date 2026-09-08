@@ -7,16 +7,16 @@ dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 connectDb()
   .then(()=>{
-    app.on(error,(error)=>{
+    app.on("error",(error)=>{
         console.error("Error: ",error)
         throw error;
     })
-
-    app.listen(process.env.PORT||8000,()=>{
-        console.log(`Server is running on Port ${process.env.PORT}`)
+    const PORT=process.env.PORT || 8000
+    app.listen(PORT,()=>{
+        console.log(`Server is running on Port ${PORT}`)
     })
   })
-  .catch((err) => {
+  .catch((error) => {
     console.error("MongoDB Connection Failed: ", error);
   });
 
